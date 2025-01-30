@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Currency Calculator</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Indian Currency Calculator</h1>
+        <div class="currency-section">
+            <div class="currency">
+                <img src="/images/500.jpg" alt="₹500">
+                <input type="number" id="input500" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result500">₹0</span>
+            </div>
+            <div class="currency">
+                <img src="/images/200.jpg" alt="₹200">
+                <input type="number" id="input200" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result200">₹0</span>
+            </div>
+            <div class="currency">
+                <img src="/images/100.jpg" alt="₹100">
+                <input type="number" id="input100" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result100">₹0</span>
+            </div>
+            <div class="currency">
+                <img src="/images/50.jpg" alt="₹50">
+                <input type="number" id="input50" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result50">₹0</span>
+            </div>
+            <div class="currency">
+                <img src="/images/20.jpg" alt="₹20">
+                <input type="number" id="input20" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result20">₹0</span>
+            </div>
+            <div class="currency">
+                <img src="/images/10.jpg" alt="₹10">
+                <input type="number" id="input10" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result10">₹0</span>
+            </div>
+            <div class="currency">
+                <img src="/images/5.jpg" alt="₹5">
+                <input type="number" id="input5" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result5">₹0</span>
+            </div>
+            <div class="currency">
+                <img src="/images/2.jpg" alt="₹2">
+                <input type="number" id="input2" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result2">₹0</span>
+            </div>
+            <div class="currency">
+                <img src="/images/1.jpg" alt="₹1">
+                <input type="number" id="input1" placeholder="Enter quantity" oninput="calculate()">
+                <span id="result1">₹0</span>
+            </div>
+        </div>
+        <div class="total">
+            <h3>Total Amount: ₹<span id="totalAmount">0</span></h3>
+        </div>
+        <div class="buttons">
+            <button id="clearButton" onclick="clearFields()">Clear</button>
+            <button id="historyButton" onclick="showHistory()">History</button>
+        </div>
+        <div id="historySection" class="history-section" style="display: none;">
+            <h3>History</h3>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
