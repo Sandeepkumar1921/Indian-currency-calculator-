@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation History</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculation History</h1>
+        <ul id="historyList"></ul>
+        <button onclick="clearHistory()">Delete All History</button>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        function loadHistory() {
+            var historyList = document.getElementById('historyList');
+            historyList.innerHTML = '';
+
+            var savedHistory = JSON.parse(localStorage.getItem('history')) || [];
+
+            if (savedHistory.length === 0) {
+                historyList.innerHTML = '<li>No history available</li>';
+            } else {
+                savedHistory.forEach((entry, index) => {
+                    var listItem = document.createElement('li');
+                    listItem.textContent = `Entry ${index + 1}: ₹${entry.amount} (Date: ${entry.date})`;
+                    historyList.appendChild(listItem);
+                });
+            }
+        }
+
+        function clearHistory() {
+            var confirmDelete = confirm("क्या आप पूरी हिस्ट्री डिलीट करना चाहते हैं?");
+            if (confirmDelete) {
+                localStorage.removeItem('history');
+                alert("सारी हिस्ट्री डिलीट कर दी गई है!");
+                loadHistory();
+            }
+        }
+
+        function goBack() {
+            window.location.href = "index.html";
+        }
+
+        window.onload = loadHistory;
+    </script>
+</body>
+</html>
